@@ -48,3 +48,4 @@ I've used this extra clases:
 - [x] Login 
 - [x] Recycler
 - [x] Dialog
+- [x] Delete BDD
