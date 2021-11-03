@@ -14,6 +14,7 @@ In my project you'll be able to:
 
 #### Bottom navigation
 The navigation of the application is done through the bottom navigation and the fragments
+
 ![image](https://user-images.githubusercontent.com/43346616/140230436-8e89cfdc-694f-4a4e-85bb-e10d0f8cdc32.png)
 
 #### Form Screen
