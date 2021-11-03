@@ -1,8 +1,10 @@
 package com.example.musicapp.APP;
 
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -57,6 +59,37 @@ public class form extends Fragment {
                     txttitulo.setText("");
                     txtartista.setText("");
                 }
+            }
+        });
+        final Button btndelBDD = form.findViewById(R.id.btndeleteDB);
+        btndelBDD.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+
+                // set title
+                alertDialogBuilder.setTitle(getString(R.string.dialog_info));
+
+                // set dialog message
+                alertDialogBuilder.setMessage(getString(R.string.dialog_Advetencia));
+                alertDialogBuilder.setCancelable(false);
+                alertDialogBuilder.setPositiveButton(getString(R.string.dialog_aceptar), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        DBCreation.eliminar();
+                        Toast toast = Toast.makeText((getActivity()).getApplicationContext(), getString(R.string.dialog_confirmacion), Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                });
+                alertDialogBuilder.setNegativeButton(getString(R.string.dialog_cancelar), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Toast toast = Toast.makeText((getActivity()).getApplicationContext(), getString(R.string.dialog_respuesta), Toast.LENGTH_SHORT);
+                        toast.show();
+                        dialog.cancel();
+                    }
+                });
+                // create alert dialog
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                // show it
+                alertDialog.show();
             }
         });
 
