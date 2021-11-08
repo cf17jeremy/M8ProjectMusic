@@ -27,7 +27,7 @@
     <string name="defEliminar">Elimina una incidencia</string>
     <string name="defConfigurar">Configura tus preferencias en la aplicacion</string>
     <string name="errorLogin">Usuario o contraseña incorrecto!</string>
-    <string name="toast_correctadd">Incidencia creada correctamente</string>
+    <string name="toast_correctadd">Musica creada correctamente</string>
     <string name="remembertxt">Recuerdame</string>
     <string name="sel_id">Selecciona un idioma</string>
     <string name="español">Español</string>
