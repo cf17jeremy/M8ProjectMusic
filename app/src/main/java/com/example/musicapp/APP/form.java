@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,25 +29,23 @@ public class form extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         DBCreation = new DBDCreation(getContext());
         db = DBCreation.getWritableDatabase();
 
         // Inflate the layout for this fragment
-        final View form = inflater.inflate(R.layout.fragment_form, container, false);
-        final Button btnins = form.findViewById(R.id.btninsert);
+        View form = inflater.inflate(R.layout.fragment_form, container, false);
+        Button btnins = form.findViewById(R.id.btninsert);
         btnins.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 EditText txttitulo = form.findViewById(R.id.titulo);
                 EditText txtartista = form.findViewById(R.id.artista);
                 String titulo = txttitulo.getText().toString();
                 String artista = txtartista.getText().toString();
+
+                Log.d("añadir",titulo + artista);
 
                 if(titulo.length() == 0 || artista.length() == 0){
                     Toast toast = Toast.makeText(getActivity(),getResources().getString(R.string.toast_voidins),Toast.LENGTH_SHORT);
@@ -61,8 +60,9 @@ public class form extends Fragment {
                 }
             }
         });
-        final Button btndelBDD = form.findViewById(R.id.btndeleteDB);
+        Button btndelBDD = form.findViewById(R.id.btndeleteDB);
         btndelBDD.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
 
@@ -94,6 +94,6 @@ public class form extends Fragment {
         });
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_form, container, false);
+        return form;
     }
 }
