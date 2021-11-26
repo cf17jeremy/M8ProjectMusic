@@ -1,0 +1,41 @@
+<resources>
+    <!-- LENGUAGE CAT -->
+    <string name="app_name">MusicApp</string>
+    <string name="title_home">Inici</string>
+    <string name="title_list">Llista</string>
+    <string name="menusito">Menu</string>
+    <string name="title_form">Formulari</string>
+    <string name="titulo">Titol</string>
+    <string name="artista">Artista</string>
+    <string name="Añadir">Afegir</string>
+    <string name="toast_voidins">No podeu deixar el títol o l\'artista buits!!</string>
+    <string name="dltBDD">Eliminar Base de dades</string>
+    <string name="dialog_Advetencia">Estàs segur d\'eliminar totes les cançons?</string>
+    <string name="dialog_respuesta">Heu seleccionat cancel·lar.</string>
+    <string name="dialog_info">Informació</string>
+    <string name="dialog_confirmacion">S\'han eliminat totes les cançons correctament!</string>
+    <string name="dialog_aceptar">Acceptar</string>
+    <string name="dialog_cancelar">Cancel·la</string>
+    <string name="title_settings">Ajustaments</string>
+    <string name="dialog_Advetencia2">Esteu segur d\'eliminar les vostres preferències?</string>
+    <string name="errorLogin">Usuari o contrasenya incorrecte!</string>
+    <string name="toast_correctadd">Cançó creada correctament</string>
+    <string name="remembertxt">Recorda\'m</string>
+    <string name="sel_id">Seleccioneu un idioma</string>
+    <string name="español">Espanyol</string>
+    <string name="ingles">Anglès</string>
+    <string name="catalan">Català</string>
+    <string name="login">Entra</string>
+    <string name="user">Usuari</string>
+    <string name="contra">Contrasenya</string>
+    <string name="delpref">Eliminar preferències</string>
+
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

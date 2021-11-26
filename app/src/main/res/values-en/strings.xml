@@ -1,0 +1,40 @@
+<resources>
+    <!-- LENGUAGE EN-->
+    <string name="app_name">MusicApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_list">List</string>
+    <string name="menusito">Menu</string>
+    <string name="title_form">Form</string>
+    <string name="titulo">Title</string>
+    <string name="artista">Artist</string>
+    <string name="Añadir">Add</string>
+    <string name="toast_voidins">You cannot leave the title or the artist empty !!</string>
+    <string name="dltBDD">Delete Database</string>
+    <string name="dialog_Advetencia">Are you sure to delete all songs?</string>
+    <string name="dialog_respuesta">You have selected to cancel.</string>
+    <string name="dialog_info">Information</string>
+    <string name="dialog_confirmacion">All songs has been removed successfully!</string>
+    <string name="dialog_aceptar">Accept</string>
+    <string name="dialog_cancelar">Cancel</string>
+    <string name="title_settings">Settings</string>
+    <string name="dialog_Advetencia2">Are you sure to delete your preferences?</string>
+    <string name="errorLogin">Wrong username or password!</string>
+    <string name="toast_correctadd">Song created successfully</string>
+    <string name="remembertxt">Remember me</string>
+    <string name="sel_id">Select a language</string>
+    <string name="español">Spanish</string>
+    <string name="ingles">English</string>
+    <string name="catalan">Catalan</string>
+    <string name="login">Login</string>
+    <string name="user">Username</string>
+    <string name="contra">Password</string>
+    <string name="delpref">Delete preferences</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

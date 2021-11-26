@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 public class saveprefecence {
     Context context;
 
-    public void saveprefecence(Context context) {
+    public saveprefecence(Context context) {
         this.context = context;
     }
 

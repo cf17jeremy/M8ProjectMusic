@@ -14,9 +14,6 @@ import com.example.musicapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class menu extends AppCompatActivity {
-    //Creacion de la instancia
-    private DBDCreation DBCreation;
-    private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +36,10 @@ public class menu extends AppCompatActivity {
                 case R.id.nav_formulari:
                     selectedFragment = new form();
                     break;
+
+                case R.id.nav_settings:
+                    selectedFragment = new settings();
+                    break;
             }
 
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
@@ -46,33 +47,4 @@ public class menu extends AppCompatActivity {
             return true;
         });
     }
-
-    /*public void confirmacion() {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
-
-        // set title
-        alertDialogBuilder.setTitle(getString(R.string.dialog_info));
-
-        // set dialog message
-        alertDialogBuilder.setMessage(getString(R.string.dialog_Advetencia));
-        alertDialogBuilder.setCancelable(false);
-        alertDialogBuilder.setPositiveButton(getString(R.string.dialog_aceptar), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                DBCreation.eliminar();
-                Toast toast = Toast.makeText((getActivity()).getApplicationContext(), getString(R.string.dialog_confirmacion), Toast.LENGTH_SHORT);
-                toast.show();
-            }
-        });
-        alertDialogBuilder.setNegativeButton(getString(R.string.dialog_cancelar), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                Toast toast = Toast.makeText((getActivity()).getApplicationContext(), getString(R.string.dialog_respuesta), Toast.LENGTH_SHORT);
-                toast.show();
-                dialog.cancel();
-            }
-        });
-        // create alert dialog
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        // show it
-        alertDialog.show();
-    }*/
 }

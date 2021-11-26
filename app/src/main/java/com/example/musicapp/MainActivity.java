@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.musicapp.APP.login;
 import com.example.musicapp.APP.menu;
+import com.example.musicapp.APP.saveprefecence;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.RequiresApi;
@@ -25,25 +26,25 @@ public class MainActivity extends AppCompatActivity {
     Button login;
     EditText usuari,contrasenya;
     private CheckBox RememberMe;
-    //private saveprefecence savpref;
+    private saveprefecence savpref;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*savpref = new saveprefecence(getApplicationContext());
+        savpref = new saveprefecence(getApplicationContext());
         if(!new saveprefecence(this).noidioma()){
             setAppLocale(savpref.getidioma());
-        }*/
+        }
         //declaracion checkbox
         RememberMe = findViewById(R.id.rememberuser);
         RememberMe.setText(getResources().getString(R.string.remembertxt));
 
-        /*if (!new saveprefecence(this).isUserLogedOut()) {
+        if (!new saveprefecence(this).isUserLogedOut()) {
             //si estan guardados entra directamente al menu
             gotomenu();
-        }*/
+        }
 
         //variables
         usuari = findViewById(R.id.user);
@@ -59,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 com.example.musicapp.APP.login usu = new login();
                 if ((usuari.getText().toString().trim().equals(usu.getuser())) && (contrasenya.getText().toString().trim().equals(usu.getpasswd()))) {
-                    /*if (RememberMe.isChecked()) {
+                    if (RememberMe.isChecked()) {
                         saveLoginDetails(usuari.getText().toString().trim(), contrasenya.getText().toString().trim());
-                    }*/
+                    }
                     //SharedPreferences sp = getSharedPreferences("LoginDetails" , Context.MODE_PRIVATE);
                     //savpref.getUser();
                     //savpref.getPass();
@@ -73,11 +74,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    /*
+
     private void saveLoginDetails(String user, String password) {
         new saveprefecence(this).saveLoginDetails(user, password);
     }
-    */
 
     public void gotomenu(){
         Intent intent = new Intent (this, menu.class);
