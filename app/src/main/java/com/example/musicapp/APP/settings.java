@@ -101,11 +101,9 @@ public class settings extends Fragment {
 
         //SPINNER
         idioma = config.findViewById(R.id.idioma);
-        final String[] l = new String[]{getResources().getString(R.string.sel_id),getResources().getString(R.string.español),getResources().getString(R.string.ingles),getResources().getString(R.string.catalan)};
-
+        String[] idiomas = getResources().getStringArray(R.array.idiomas);
         // Initializing an ArrayAdapter
-        final ArrayAdapter adapter = new ArrayAdapter<String>(
-                getActivity(),android.R.layout.simple_spinner_dropdown_item,l){
+        final ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getContext(),android.R.layout.simple_spinner_item,idiomas){
             @Override
             public boolean isEnabled(int p){
                 if(p == 0){
@@ -130,20 +128,20 @@ public class settings extends Fragment {
                 return view;
             }
         };
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         idioma.setAdapter(adapter);
 
         //Spinner
         idioma.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (idioma.getSelectedItem().toString() == l[1]){
+                if (parent.getItemAtPosition(position).toString() == idiomas[1]){
                     changeLocale("es");
                     refresh();
-                } else if (idioma.getSelectedItem().toString() == l[2]){
+                } else if (parent.getItemAtPosition(position) == idiomas[2]){
                     changeLocale("en");
                     refresh();
-                } else if (idioma.getSelectedItem().toString() == l[1]) {
+                } else if (parent.getItemAtPosition(position) == idiomas[3]) {
                     changeLocale("cat");
                     refresh();
                 }
@@ -161,13 +159,13 @@ public class settings extends Fragment {
         db = dbCreation.getWritableDatabase();
 
         //Button delete save preferences
-        final View settings = inflater.inflate(R.layout.fragment_form, container, false);
+        final View settings = inflater.inflate(R.layout.fragment_settings, container, false);
         final Button btndelsavpref = settings.findViewById(R.id.btnsavpref);
         btndelsavpref.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 reseteo();
             }
         });
-        return config;
+        return settings;
     }
 }

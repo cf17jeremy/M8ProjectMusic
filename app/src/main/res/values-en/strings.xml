@@ -22,9 +22,12 @@
     <string name="toast_correctadd">Song created successfully</string>
     <string name="remembertxt">Remember me</string>
     <string name="sel_id">Select a language</string>
-    <string name="español">Spanish</string>
-    <string name="ingles">English</string>
-    <string name="catalan">Catalan</string>
+    <string-array name="idiomas">
+        <item>Select Language</item>
+        <item>Spanish</item>
+        <item>English</item>
+        <item>Catalan</item>
+    </string-array>
     <string name="login">Login</string>
     <string name="user">Username</string>
     <string name="contra">Password</string>
