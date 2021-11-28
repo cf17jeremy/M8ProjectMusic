@@ -98,7 +98,7 @@ public class settings extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View config = inflater.inflate(R.layout.fragment_settings, container, false);
-
+/*
         //SPINNER
         idioma = config.findViewById(R.id.idioma);
         String[] idiomas = getResources().getStringArray(R.array.idiomas);
@@ -150,6 +150,7 @@ public class settings extends Fragment {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+*/
 
         //shared prefrerences
         savpref = new saveprefecence(getContext());
@@ -164,6 +165,29 @@ public class settings extends Fragment {
         btndelsavpref.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 reseteo();
+            }
+        });
+
+        //Buttons Languages
+        final Button btnesp = settings.findViewById(R.id.btnesp);
+        btnesp.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                changeLocale("es");
+                refresh();
+            }
+        });
+        final Button btneng = settings.findViewById(R.id.btneng);
+        btneng.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                changeLocale("en");
+                refresh();
+            }
+        });
+        final Button btncat = settings.findViewById(R.id.btncat);
+        btncat.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                changeLocale("cat");
+                refresh();
             }
         });
         return settings;

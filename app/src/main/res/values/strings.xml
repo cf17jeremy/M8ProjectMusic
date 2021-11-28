@@ -28,6 +28,9 @@
         <item>Inglés</item>
         <item>Catalán</item>
     </string-array>
+    <string name="esp">Español</string>
+    <string name="eng">Ingles</string>
+    <string name="cat">Catalán</string>
     <string name="login">Entra</string>
     <string name="user">Usuario</string>
     <string name="contra">Contraseña</string>
