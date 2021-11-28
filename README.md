@@ -10,19 +10,21 @@ In my project you'll be able to:
 
 ## Screenshots
 #### Login
-![cp1](https://user-images.githubusercontent.com/43346616/140229977-e1d184ad-7e50-49d5-b5a0-7c5f99b5de55.png)
+![login](https://user-images.githubusercontent.com/43346616/143780974-8fdd9dfe-6c5b-4048-a3ee-9cecd6f88a60.jpg)
 
 #### Bottom navigation
-The navigation of the application is done through the bottom navigation and the fragments
+The navigation of the application is done through the bottom navigation and the fragments.
 
-![image](https://user-images.githubusercontent.com/43346616/140230436-8e89cfdc-694f-4a4e-85bb-e10d0f8cdc32.png)
+![btmnav](https://user-images.githubusercontent.com/43346616/143781018-05ac5b87-673a-4a48-b55e-9acd59118a16.jpg)
 
 #### Form Screen
-![image](https://user-images.githubusercontent.com/43346616/140230738-681cb1a1-e5ad-41f3-81d6-9c0fe9b8e81d.png)
+![form](https://user-images.githubusercontent.com/43346616/143781023-9678a975-76f3-4b35-bedc-dc4abce2d7c9.jpg)
 
 #### List Screen
-![image](https://user-images.githubusercontent.com/43346616/140230782-0ced2084-02ea-41cd-970d-fe2a6a8a0296.png)
-![image](https://user-images.githubusercontent.com/43346616/140230807-8e65c0e4-3352-417d-b98f-b596751e2305.png)
+![list](https://user-images.githubusercontent.com/43346616/143781055-e2baf5d7-427a-4889-b957-8e18d04b1f14.jpg)
+
+#### Settings Screen
+![settings](https://user-images.githubusercontent.com/43346616/143781068-be4fe99f-9607-4162-a168-39e741ebbfef.jpg)
 
 ## Technologies
 This project is developed with android studio (java).
