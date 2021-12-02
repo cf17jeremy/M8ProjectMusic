@@ -34,7 +34,6 @@ public class settings extends Fragment {
     private DBDCreation dbCreation;
     private SQLiteDatabase db;
     private static Locale loc;
-    Spinner idioma;
 
     public settings() {
         // Required empty public constructor
@@ -85,22 +84,16 @@ public class settings extends Fragment {
     }
 
     public void refresh (){
-        Intent i = (getActivity().getIntent());
-        startActivity(i);
-        Fragment f = new settings();
-        FragmentManager menuManager = getFragmentManager();
-        FragmentTransaction menuTransaction = menuManager.beginTransaction();
-        menuTransaction.replace(R.id.main_menu,f);
-        menuTransaction.commit();
+        onCreateView(null,null,null);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View config = inflater.inflate(R.layout.fragment_settings, container, false);
-/*
-        //SPINNER
-        idioma = config.findViewById(R.id.idioma);
+        final View settings = inflater.inflate(R.layout.fragment_settings, container, false);
+
+        /*Spinner con errores en desarrollo
+        Spinner idioma = config.findViewById(R.id.spinner);
         String[] idiomas = getResources().getStringArray(R.array.idiomas);
         // Initializing an ArrayAdapter
         final ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(getContext(),android.R.layout.simple_spinner_item,idiomas){
@@ -149,8 +142,7 @@ public class settings extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
-        });
-*/
+        });*/
 
         //shared prefrerences
         savpref = new saveprefecence(getContext());
@@ -160,7 +152,6 @@ public class settings extends Fragment {
         db = dbCreation.getWritableDatabase();
 
         //Button delete save preferences
-        final View settings = inflater.inflate(R.layout.fragment_settings, container, false);
         final Button btndelsavpref = settings.findViewById(R.id.btnsavpref);
         btndelsavpref.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

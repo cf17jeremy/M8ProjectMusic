@@ -1,6 +1,8 @@
 package com.example.musicapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
@@ -63,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
                     if (RememberMe.isChecked()) {
                         saveLoginDetails(usuari.getText().toString().trim(), contrasenya.getText().toString().trim());
                     }
-                    //SharedPreferences sp = getSharedPreferences("LoginDetails" , Context.MODE_PRIVATE);
-                    //savpref.getUser();
-                    //savpref.getPass();
+                    SharedPreferences sp = getSharedPreferences("LoginDetails" , Context.MODE_PRIVATE);
+                    savpref.getUser();
+                    savpref.getPass();
                     gotomenu();
                 } else {
                     Snackbar.make(v, getResources().getString(R.string.errorLogin), Snackbar.LENGTH_LONG)
