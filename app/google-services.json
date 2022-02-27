@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "365914139942",
+    "firebase_url": "https://mapsm8-342017-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "mapsm8-342017",
+    "storage_bucket": "mapsm8-342017.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365914139942:android:6f26eef6e2a357a52b65e7",
+        "android_client_info": {
+          "package_name": "com.example.musicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365914139942-cf0pif7o5lskfg0uiv81teql1b0pl2rv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkfeug_qivtz6KmcpT2haiEZRKJMi4_EM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365914139942-cf0pif7o5lskfg0uiv81teql1b0pl2rv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

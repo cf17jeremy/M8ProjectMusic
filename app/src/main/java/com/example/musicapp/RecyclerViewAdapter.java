@@ -1,6 +1,5 @@
 package com.example.musicapp;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +14,12 @@ import com.example.musicapp.APP.musica;
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
-    private ArrayList<musica> array_incidencies;
-    private list context;
+    private ArrayList<musica> musicList;
+    private int context;
 
-    public RecyclerViewAdapter(list con, ArrayList<musica> arrI){
-        array_incidencies = arrI;
-        context = con;
+    public RecyclerViewAdapter(int context, ArrayList<musica> musicList){
+        this.musicList = musicList;
+        this.context = context;
     }
 
     @Override
@@ -32,13 +31,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.etiquetaNom.setText(array_incidencies.get(position).gettitulo());
-        holder.prioritat.setText(array_incidencies.get(position).getartista());
+        holder.etiquetaNom.setText(musicList.get(position).gettitulo());
+        holder.prioritat.setText(musicList.get(position).getartista());
     }
 
     @Override
     public int getItemCount() {
-        return array_incidencies.size();
+        return musicList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

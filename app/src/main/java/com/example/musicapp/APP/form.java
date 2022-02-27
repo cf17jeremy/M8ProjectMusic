@@ -17,12 +17,18 @@ import android.widget.Toast;
 
 import com.example.musicapp.BDD.DBDCreation;
 import com.example.musicapp.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class form extends Fragment {
     //Creacion instancia
-    private DBDCreation DBCreation;
-    private SQLiteDatabase db;
+    //private DBDCreation DBCreation;
+    //private SQLiteDatabase db;
+    private DatabaseReference dbfire;
 
     public form() {
         // Required empty public constructor
@@ -31,8 +37,9 @@ public class form extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        DBCreation = new DBDCreation(getContext());
-        db = DBCreation.getWritableDatabase();
+        dbfire = FirebaseDatabase.getInstance().getReference();
+        //DBCreation = new DBDCreation(getContext());
+        //db = DBCreation.getWritableDatabase();
 
         // Inflate the layout for this fragment
         View form = inflater.inflate(R.layout.fragment_form, container, false);
@@ -51,8 +58,9 @@ public class form extends Fragment {
                     Toast toast = Toast.makeText(getActivity(),getResources().getString(R.string.toast_voidins),Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
-                    musica musica = new musica(titulo, artista);
-                    DBDCreation.insertMusica(db, musica);
+                    //musica musica = new musica(titulo, artista);
+                    //DBDCreation.insertMusica(db, musica);
+                    tofirebase(titulo, artista);
                     Toast toast = Toast.makeText(getActivity(), getResources().getString(R.string.toast_correctadd), Toast.LENGTH_SHORT);
                     toast.show();
                     txttitulo.setText("");
@@ -74,7 +82,8 @@ public class form extends Fragment {
                 alertDialogBuilder.setCancelable(false);
                 alertDialogBuilder.setPositiveButton(getString(R.string.dialog_aceptar), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        DBCreation.eliminar();
+                        //DBCreation.eliminar();
+                        dbfire.setValue(null);
                         Toast toast = Toast.makeText((getActivity()).getApplicationContext(), getString(R.string.dialog_confirmacion), Toast.LENGTH_SHORT);
                         toast.show();
                     }
@@ -95,5 +104,12 @@ public class form extends Fragment {
 
         // Inflate the layout for this fragment
         return form;
+    }
+
+    private void tofirebase(String titulo, String artista) {
+        Map<String, Object> Musicdat = new HashMap<>();
+        Musicdat.put("Titulo", titulo);
+        Musicdat.put("Artista", artista);
+        dbfire.child("Cancion").push().setValue(Musicdat);
     }
 }

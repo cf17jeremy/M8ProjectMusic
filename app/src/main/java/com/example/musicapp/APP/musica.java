@@ -1,28 +1,28 @@
 package com.example.musicapp.APP;
 
 public class musica {
-    protected String titulo;
-    protected String artista;
+    protected String Titulo;
+    protected String Artista;
 
-    public musica(String titulo, String artista){
-        this.titulo = titulo;
-        this.artista = artista;
+    public musica(String Titulo, String Artista){
+        this.Titulo = Titulo;
+        this.Artista = Artista;
     }
 
     public String gettitulo(){
-        return titulo;
+        return Titulo;
     }
 
     public String getartista(){
-        return artista;
+        return Artista;
     }
 
     public void setNom(String newtitulo){
-        this.titulo = newtitulo;
+        this.Titulo = newtitulo;
     }
 
-    public void setPrioritat(String newartista){
-        this.artista = newartista;
+    public void setArtista(String newartista){
+        this.Artista = newartista;
 
     }
 }
